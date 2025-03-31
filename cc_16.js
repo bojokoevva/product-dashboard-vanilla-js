@@ -53,3 +53,8 @@ function displayProducts(products) {
         container.appendChild(productCard);   // Append the product card to the product container
     });
 }
+
+// Task 6 - Trigger both fetch methods when the script loads
+
+fetchProductsAsync();  // Calls the asynchronous fetch function
+fetchProductsThen();   // Calls the fetch function using .then() and .catch()
