@@ -31,7 +31,25 @@ async function fetchProductsAsync() {  //Use async/await to fetch data from the 
 }
 
 // Task 5 - Reusable handleError function
+
 function handleError(error) {
     // Log the error message to the console
     console.log("An error occurred", error);
+}
+
+// Task 4 - Display products in the DOM with name, price, and image
+
+function displayProducts(products) {
+    const container = document.getElementById("product-container");  // Select the container where the products will be displayed
+
+    products.slice(0, 5).forEach(product => {  // Loop through the first 5 products in the array
+        const productCard = document.createElement("div");   // Create a new div element to hold each product's information
+
+        // Set the inner HTML of the product card with product details: name, price, and image
+        productCard.innerHTML = `
+            <h3>${product.fields.name}</h3><p>Price: $${product.fields.price}</p><img src="${product.fields.image[0].url}">`;
+
+        productCard.setAttribute("class", "productCard");   // Assign a class to the product card for styling
+        container.appendChild(productCard);   // Append the product card to the product container
+    });
 }
