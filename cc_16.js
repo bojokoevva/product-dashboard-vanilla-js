@@ -29,3 +29,9 @@ async function fetchProductsAsync() {  //Use async/await to fetch data from the 
         handleError(error);  // Handle errors with the reusable function
     }
 }
+
+// Task 5 - Reusable handleError function
+function handleError(error) {
+    // Log the error message to the console
+    console.log("An error occurred", error);
+}
